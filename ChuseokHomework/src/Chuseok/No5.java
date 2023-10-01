@@ -12,7 +12,8 @@ public class No5 {
 			order[i] = sc.nextInt();
 		}
 		
-		Bubble(order);
+//		Bubble(order);	
+		Selection(order);
 		for(int i : order) {
 			System.out.print(i+ " ");
 		}
@@ -21,6 +22,21 @@ public class No5 {
 
 	}
 	
+	private static void Selection(int[] order) {
+		for(int i=0; i<order.length - 1; i++) {
+			int min = i;
+			for(int j=i+1; j<order.length; j++) {
+				if(order[min]>order[j]) {
+					min = j;
+				}
+			}
+			int temp = order[min];
+			order[min] = order[i];
+			order[i] = temp;
+		}
+		
+	}
+
 	public static void Bubble(int[] order) {
 		for(int i=0; i<order.length; i++) {
 			for(int j=0; j<order.length - i - 1; j++) {
@@ -31,8 +47,8 @@ public class No5 {
 				}
 			}
 		}
-		
-		
 	}
+	
+	
 
 }
