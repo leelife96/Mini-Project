@@ -12,29 +12,26 @@ public class No5 {
 			order[i] = sc.nextInt();
 		}
 		
-		int[] sorted = Bubble(order);
-		for(int i=0; i<sorted.length; i++) {
-			System.out.print(sorted[i] + " ");
+		Bubble(order);
+		for(int i : order) {
+			System.out.print(i+ " ");
 		}
 		
 		
 
 	}
 	
-	public static int[] Bubble(int[] order) {
-		
-		int[] bubble = order;
-		int temp = 0;
-		for(int i=0; i<bubble.length; i++) {
-			if (bubble[i] > bubble[i+1]) {
-				temp = bubble[i];
-				bubble[i] =  bubble[i+1];
-				bubble[i+1] = temp;
-						
+	public static void Bubble(int[] order) {
+		for(int i=0; i<order.length; i++) {
+			for(int j=0; j<order.length - i - 1; j++) {
+				if(order[j]>order[j+1]) {
+					int temp = order[j+1];
+					order[j+1] = order[j];
+					order[j] = temp;
+				}
 			}
 		}
 		
-		return bubble;
 		
 	}
 
