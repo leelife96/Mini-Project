@@ -14,7 +14,7 @@ public class No5 {
 		
 		Bubble(order);
 		for(int i : order) {
-			System.out.print(i+ "  ");
+			System.out.print(i+ " ");
 		}
 		
 		
