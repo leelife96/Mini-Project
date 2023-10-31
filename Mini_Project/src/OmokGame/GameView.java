@@ -19,7 +19,7 @@ public class GameView
 
 		board = new OmokBoard(x,y); 		 // 위에서 예를 들면  x에 15, y에 15를 입력했다면 OmokBoard(x,y)의 매개변수에
 											// 값을 넣고 전달하여 15x15 크기의 보드판을 만든다
-		statusBar = new StatusBar();
+		//statusBar = new StatusBar();
 		menu = new GameMenu();
 	}
 
