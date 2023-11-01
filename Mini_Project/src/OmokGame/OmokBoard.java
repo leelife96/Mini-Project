@@ -85,7 +85,7 @@ public class OmokBoard {
 		int y	=	omok.getY();
 		
 		if(buf[x-1][y-1] =='○' || buf[x-1][y-1] == '●') // 이미 돌이 놓여 있는 경우, "다시놔주세요"를 출력. 
-			System.out.println("다시놔주세요");				// buf[x-1][y-1]로 한 이유는 배열의 인덱스는 0부터 시작하기 때문
+			System.out.println("다시놔주세요");	// buf[x-1][y-1]로 한 이유는 배열의 인덱스는 0부터 시작하기 때문
 
 		else if(count%2 == 0)   // count가 짝수인 경우  '●'를 사용하는 플레이어의 차례이다.
 		{
@@ -118,7 +118,7 @@ public class OmokBoard {
 	            if (buf[row][col] == stone) {    // 현재 검사 중인 셀이 지정한 돌과 일치하는지 확인
 	               
 	                if (checkDirection(row, col, 0, 1, stone, 1) ||		// 가로 방향 승리 확인. row와 col은 현재 위치를 나타냄. 
-	                													// '0'과 '1'은 가로방향. stone은 확인하려는 돌의 종류. '1'은 승리조건 확인할때 시작돌을 1로 초기화
+	                							// '0'과 '1'은 가로방향. stone은 확인하려는 돌의 종류. '1'은 승리조건 확인할때 시작돌을 1로 초기화
 	                  
 	                    checkDirection(row, col, 1, 0, stone, 1) ||		// 세로 방향 승리 확인
 	                  
@@ -142,7 +142,7 @@ public class OmokBoard {
 	    int newCol = col + deltaCol;
 
 	    if (newRow >= 0 && newRow < height && newCol >= 0 && newCol < width && buf[newRow][newCol] == stone) {    // 새로운 위치가 게임 보드 내부에 있고, 그 위치의 돌이 주어진 돌과 같은지를 확인
-	    																										  // newRow >= 0 && newRow < height && newCol >= 0 && newCol < width 이 코드는 윗,아래,오른,왼쪽 테두리 범위를 벗어나는지를 체크
+	    													      // newRow >= 0 && newRow < height && newCol >= 0 && newCol < width 이 코드는 윗,아래,오른,왼쪽 테두리 범위를 벗어나는지를 체크
 	        return checkDirection(newRow, newCol, deltaRow, deltaCol, stone, count + 1);  // 위의 조건이 참이라면 checkDirection 메소드를 재귀적으로 호출하여 같은 방향으로 다음 위치 검사하고 count+1 해줌
 	    }
 
