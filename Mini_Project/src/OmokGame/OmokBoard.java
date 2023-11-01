@@ -158,7 +158,7 @@ public class OmokBoard {
 	        }
 	    }
 
-	    return "무승부"; // Return a tie message if no winner
+	    return "무승부"; 
 	}
 
 	
